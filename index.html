@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практична робота 4 — Динамічний DOM та BOM</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Зовнішній скрипт підключено в head з атрибутом defer -->
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Відгуки та зворотний зв'язок</h1>
+            <button id="theme-toggle" class="btn btn-secondary">Змінити тему 🌙</button>
+        </header>
+
+        <main>
+            <!-- Блок статистики та BOM інформації -->
+            <section class="stats-section">
+                <p>Всього відгуків: <strong id="comments-count">0</strong></p>
+                <p class="bom-info">Ширина екрана: <span id="window-width">0</span>px</p>
+            </section>
+
+            <!-- Форма додавання відгуку -->
+            <section class="form-section">
+                <h2>Залишити відгук</h2>
+                <form id="comment-form">
+                    <div class="form-group">
+                        <label for="author-name">Ваше ім'я:</label>
+                        <input type="text" id="author-name" required placeholder="Введіть ім'я">
+                    </div>
+                    <div class="form-group">
+                        <label for="comment-text">Ваш відгук:</label>
+                        <textarea id="comment-text" rows="4" required placeholder="Напишіть ваш відгук..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Опублікувати</button>
+                </form>
+            </section>
+
+            <!-- Список коментарів -->
+            <section class="comments-section">
+                <h2>Усі відгуки</h2>
+                <div id="comments-container" class="comments-list">
+                    <p class="no-comments">Поки немає жодного відгуку. Будьте першим!</p>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
