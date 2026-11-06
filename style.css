@@ -4,6 +4,7 @@
     --text-color: #333333;
     --primary-color: #0066cc;
     --border-color: #e0e0e0;
+    --danger-color: #d9534f;
 }
 
 body.dark-theme {
@@ -12,6 +13,7 @@ body.dark-theme {
     --text-color: #f1f1f1;
     --primary-color: #4d94ff;
     --border-color: #44445c;
+    --danger-color: #ff6b6b;
 }
 
 body {
@@ -35,7 +37,7 @@ body {
     margin-bottom: 20px;
 }
 
-.stats-section, .form-section, .comments-section {
+.stats-section, .form-section, .search-section, .comments-section {
     background-color: var(--card-bg);
     padding: 20px;
     border-radius: 8px;
@@ -53,7 +55,7 @@ body {
     font-weight: bold;
 }
 
-.form-group input, .form-group textarea {
+.form-group input, .form-group textarea, #search-input {
     width: 100%;
     padding: 10px;
     border: 1px solid var(--border-color);
@@ -64,7 +66,7 @@ body {
 }
 
 .btn {
-    padding: 10px 18px;
+    padding: 8px 16px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -82,13 +84,31 @@ body {
     color: var(--primary-color);
 }
 
-.comment-card {
-    border-bottom: 1px solid var(--border-color);
-    padding: 12px 0;
+.btn-delete {
+    background-color: transparent;
+    color: var(--danger-color);
+    border: 1px solid var(--danger-color);
+    padding: 4px 8px;
+    font-size: 0.8em;
+    cursor: pointer;
 }
 
-.comment-card:last-child {
-    border-bottom: none;
+
+.comment-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--border-color);
+    padding: 12px 0;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.4s ease, transform 0.4s ease; 
+}
+
+
+.comment-card.fade-out {
+    opacity: 0;
+    transform: translateY(-15px);
 }
 
 .comment-author {
@@ -105,4 +125,8 @@ body {
 .bom-info {
     font-size: 0.9em;
     opacity: 0.8;
+}
+
+.is-hidden {
+    display: none !important;
 }

@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Практична робота 4 — Динамічний DOM та BOM</title>
+    <title>Практична робота 4 — Розширений DOM & BOM</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Зовнішній скрипт підключено в head з атрибутом defer -->
     <script src="app.js" defer></script>
 </head>
 <body>
@@ -16,13 +15,14 @@
         </header>
 
         <main>
-            <!-- Блок статистики та BOM інформації -->
+       
             <section class="stats-section">
                 <p>Всього відгуків: <strong id="comments-count">0</strong></p>
+                <!-- Лічильник переглядів (localStorage) -->
+                <p>Кількість переглядів сторінки: <strong id="views-count">0</strong></p>
                 <p class="bom-info">Ширина екрана: <span id="window-width">0</span>px</p>
             </section>
 
-            <!-- Форма додавання відгуку -->
             <section class="form-section">
                 <h2>Залишити відгук</h2>
                 <form id="comment-form">
@@ -32,15 +32,21 @@
                     </div>
                     <div class="form-group">
                         <label for="comment-text">Ваш відгук:</label>
-                        <textarea id="comment-text" rows="4" required placeholder="Напишіть ваш відгук..."></textarea>
+                        <textarea id="comment-text" rows="3" required placeholder="Напишіть ваш відгук..."></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Опублікувати</button>
                 </form>
             </section>
 
-            <!-- Список коментарів -->
+            
+            <section class="search-section">
+                <input type="search" id="search-input" placeholder="🔍 Пошук по відгуках в реальному часі...">
+            </section>
+
+        
             <section class="comments-section">
                 <h2>Усі відгуки</h2>
+               
                 <div id="comments-container" class="comments-list">
                     <p class="no-comments">Поки немає жодного відгуку. Будьте першим!</p>
                 </div>
